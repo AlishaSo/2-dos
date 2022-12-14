@@ -92,6 +92,26 @@ const deleteTask = async(req,res)=>{
     
     }
     }
+
+//GET ONE TASK - READ
+const getOneTask = async(req,res)=>{
+
+    try{
+        const { id } = req.params;
+        const oneTask = Task.findById(id);
+
+        if(oneTask){
+            return res.status(200).json({oneTask});
+        }
+        return res.status(404).json("Task not found. Check provided ID for typos.")
+    }
+
+    catch(err){
+        res.status(500).json(err);
+
+    }
+
+}
 module.exports = {
    createTask,
    getAllTasks,
