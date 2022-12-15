@@ -116,7 +116,8 @@ module.exports = {
    createTask,
    getAllTasks,
    updateTask,
-   deleteTask
+   deleteTask,
+   getOneTask
 
-    
+
 }
