@@ -6,7 +6,7 @@
   "author": "poovaic <poovai.c@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start":"yarn backend/server.js",
+    "start":"node backend/server.js",
     "server":"nodemon backend/server.js",
     "client":"yarn --cwd client dev"
   },
