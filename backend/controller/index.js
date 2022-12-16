@@ -98,15 +98,16 @@ const getOneTask = async(req,res)=>{
 
     try{
         const { id } = req.params;
-        const oneTask = Task.findById(id);
-
+        const oneTask = await Task.findById(id);
         if(oneTask){
-            return res.status(200).json({oneTask});
+           return res.status(200).json({oneTask});
+            
         }
         return res.status(404).json("Task not found. Check provided ID for typos.")
     }
 
     catch(err){
+        console.log("catch")
         res.status(500).json(err);
 
     }
